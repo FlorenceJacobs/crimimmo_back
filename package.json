@@ -1,0 +1,31 @@
+{
+  "name": "crimimmo_back",
+  "version": "1.0.0",
+  "description": "Express - Apli Immo & Crimino - Labo Technofuturtic 2023",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "db:create": "npx sequelize-cli db:create",
+    "db:migrate": "npx sequelize-cli db:migrate",
+    "db:migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "db:migrate:undo:all": "npx sequelize-cli db:migrate:undo:all"
+  },
+  "author": "Florence Jacobs",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.3",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "sequelize": "^6.31.1",
+    "tedious": "^16.1.0",
+    "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-register": "^6.26.0",
+    "nodemon": "^2.0.22",
+    "sequelize-cli": "^6.6.0"
+  }
+}
