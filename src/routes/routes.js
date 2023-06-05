@@ -1,5 +1,13 @@
 import { Router } from "express";
 import multer from 'multer';
+import { RentalController } from "../controllers/rental.controller.js";
+import { validationMiddleware } from "../middlewares/validation.middleware.js";
+import { createLocationSchema } from "../validators/create-location.schema.js";
+import { createOwnerSchema } from "../validators/create-owner.schema.js";
+import { createRentalSchema } from "../validators/create-rental.schema.js";
+import { LocationController } from "../controllers/location.controller.js";
+import { OwnerController } from "../controllers/owner.controller.js";
+
 
 export const routes = Router();
 
@@ -23,6 +31,7 @@ routes.route('/add-rental-location')
 
 routes.route('/add-owner')
     .post(
+        upload.single('picture'),
         validationMiddleware(createOwnerSchema),
         OwnerController.create
         );

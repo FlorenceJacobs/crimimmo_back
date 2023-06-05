@@ -31,17 +31,25 @@ module.exports = {
       },
       street: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: false
       },
       postal_code: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: false
       },
       region: {
         type: Sequelize.STRING,
         allowNull: true
       },
       locality: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      state: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      county: {
         type: Sequelize.STRING,
         allowNull: true
       },

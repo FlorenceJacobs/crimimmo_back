@@ -22,7 +22,7 @@ module.exports = {
           allowNull: false,
       },
       subscribeDate: {
-        type: Sequelize.DATEONLY,
+        type: Sequelize.DATE,
         allowNull: false,
       },
       email: {

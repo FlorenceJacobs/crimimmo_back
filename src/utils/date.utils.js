@@ -7,5 +7,5 @@
 export const getDateYearsAgo = (years) => {
   let today = new Date();
   let dateYearsAgo = new Date();
-  dateYearsAgo.setFullYear(today.getFullYear() - years);
-    }
+  return dateYearsAgo.setFullYear(today.getFullYear() - years);
+}
