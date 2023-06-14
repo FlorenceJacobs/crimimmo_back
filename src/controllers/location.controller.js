@@ -21,16 +21,13 @@ export const LocationController = {
             }
         }) 
 
-        console.log('les datas sont récupérées');
-        console.log(data.lon)
         const result = await Location.create({
                     ...location,
-                    holidayRentalId: 1,
-                    longitude : data[0].lon,
-                    latitude : data[0].lat,
-                    state : data[0].address.state,
-                    region : data[0].address.region,
-                    county : data[0].address.county
+                    longitude : data.data[0].lon,
+                    latitude : data.data[0].lat,
+                    state : data.data[0].address.state,
+                    region : data.data[0].address.region,
+                    county : data.data[0].address.county
                 });
     }
 }
