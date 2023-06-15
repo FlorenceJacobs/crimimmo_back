@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from './index.js'
 
-export const Owner = sequelize.define('owner', {
+export const User = sequelize.define('user', {
     lastname: DataTypes.STRING,
     firstname: DataTypes.STRING,
     birthdate: DataTypes.DATEONLY,

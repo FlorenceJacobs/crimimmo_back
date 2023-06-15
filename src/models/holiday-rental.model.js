@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from './index.js'
-import { Owner } from "./owner.model.js";
+import { User } from "./user.model.js";
 import { Location } from "./location.model.js";
 
 export const HolidayRental = sequelize.define('holidayRental', {
@@ -15,5 +15,5 @@ export const HolidayRental = sequelize.define('holidayRental', {
     picture: DataTypes.STRING,
 }, { timestamps: false });
 
-Owner.hasMany(HolidayRental);
-HolidayRental.belongsTo(Owner);
+User.hasMany(HolidayRental);
+HolidayRental.belongsTo(User);

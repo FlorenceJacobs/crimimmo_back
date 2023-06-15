@@ -1,7 +1,7 @@
 import yup from 'yup';
 import { getDateYearsAgo } from '../utils/date.utils.js';
 
-export const createOwnerSchema = yup.object({
+export const createUserSchema = yup.object({
     lastname: yup.string().required().max(255),
     firstname: yup.string().max(500),
     email: yup.string().required(),

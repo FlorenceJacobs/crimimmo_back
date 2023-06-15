@@ -53,11 +53,11 @@ module.exports = {
           type: Sequelize.BOOLEAN,
           defaultValue: false,
       },
-      ownerId: { 
+      userId: { 
           type: Sequelize.INTEGER,
           allowNull: false,
           references:{
-            model:'owners',
+            model:'users',
             key : 'id'
           }
       },
