@@ -43,11 +43,12 @@ export const UserController = {
         const payload = {
             id: user.id,
             email: user.email,
+            firstname : user.firstname,
             role: user.role
         };
         const token = jwt.sign(
             payload,
-            process.env.JWT_SECRET,
+            process.env.JWT_KEY_TOKEN,
             { expiresIn: process.env.JWT_DURATION }
         );
         res.json({ token });
