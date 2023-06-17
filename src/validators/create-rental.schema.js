@@ -1,12 +1,13 @@
 import yup from 'yup';
+import { RentalType } from '../enums/rental-types.enum';
 
 export const createRentalSchema = yup.object({
-    name: yup.string().required().max(255),
+    name: yup.string().max(255),
     description: yup.string().max(500),
-    type: yup.string().required().oneOf(['House','Apartment','Bungalow']),
-    fromDate: yup.date().required().max(new Date()),
-    nbrPersMax: yup.number().required(),
-    nightPrice: yup.number().required(),
+    type: yup.string().oneOf(Object.values(RentalType)),
+    fromDate: yup.date().max(new Date()),
+    nbrPersMax: yup.number(),
+    nightPrice: yup.number(),
     weekPrice: yup.number(),
     weekendPrice: yup.number(),
 });

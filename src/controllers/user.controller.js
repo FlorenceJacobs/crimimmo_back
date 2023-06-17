@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import { smtpTransport } from "../utils/mail.utils.js";
+import { Roles } from "../enums/roles.enum.js";
 
 dotenv.config();
 
@@ -28,7 +29,7 @@ export const UserController = {
         picture: req.file?.filename,
         hashedPassword: await bcrypt.hash(user.password, await bcrypt.genSalt()),
         subscribeDate : new Date().toISOString(),
-        role: 'USER'
+        role: Roles.USER
     });
     res.json(new UserDTO(result));
     },

@@ -19,23 +19,23 @@ module.exports = {
       },
       longitude: { 
         type: Sequelize.DECIMAL(9,5),
-        allowNull: false
+        allowNull: true
       },
       latitude: { 
         type: Sequelize.DECIMAL(9,5),
-        allowNull: false
+        allowNull: true
       },
       number: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       street: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       postal_code: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       region: {
         type: Sequelize.STRING,

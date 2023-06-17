@@ -1,5 +1,7 @@
 'use strict';
 
+const { Roles } = require('../src/enums/role.enum');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -11,35 +13,35 @@ module.exports = {
       },
       lastname: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       firstname: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       birthdate: {
           type: Sequelize.DATEONLY,
-          allowNull: false,
+          allowNull: true,
       },
       subscribeDate: {
         type: Sequelize.DATE,
-        allowNull: false,
+        allowNull: true,
       },
       email: {
           type: Sequelize.STRING,
-          allowNull: false,
+          allowNull: true,
           unique: true,
       },
       hashedPassword: {
           type: Sequelize.STRING,
-          allowNull: false,
+          allowNull: true,
       },
       picture: {
           type: Sequelize.STRING,
           allowNull: true,
       },
       role: {
-          type: Sequelize.ENUM('ADMIN', 'USER')
+          type: Sequelize.ENUM(...Object.values(Roles))
       },
     });
   },

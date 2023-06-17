@@ -1,5 +1,7 @@
 'use strict';
 
+import { RentalType } from "../src/enums/rental-type.enum";
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -11,35 +13,35 @@ module.exports = {
       },
       name: {
           type: Sequelize.STRING,
-          allowNull: false,
+          allowNull: true,
       },
       description: {
           type: Sequelize.STRING,
-          allowNull: false,
+          allowNull: true,
       },
       type: {
-          type: Sequelize.ENUM('House','Apartment','Bungalow'),
-          allowNull: false,
+          type: Sequelize.ENUM(...Object.values(RentalType)),
+          allowNull: true,
       },
       fromDate: {
           type: Sequelize.DATEONLY,
-          allowNull: false,
+          allowNull: true,
       },
       nbrPersMax: {
           type: Sequelize.INTEGER,
-          allowNull: false,
+          allowNull: true,
       },
       nightPrice: {
           type: Sequelize.DECIMAL(5,2),
-          allowNull: false,
+          allowNull: true,
       },
       weekPrice: {
           type: Sequelize.DECIMAL(5,2),
-          allowNull: false,
+          allowNull: true,
       },
       weekendPrice: {
           type: Sequelize.DECIMAL(5,2),
-          allowNull: false,
+          allowNull: true,
       },
       picture: {
           type: Sequelize.STRING,
