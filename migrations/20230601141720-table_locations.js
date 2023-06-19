@@ -15,7 +15,9 @@ module.exports = {
           references:{
             model:'holidayRentals',
             key : 'id'
-          }
+          },
+          onUpdate: 'CASCADE',
+          onDelete: 'SET NULL',
       },
       longitude: { 
         type: Sequelize.DECIMAL(9,5),

@@ -2,6 +2,7 @@ import { DataTypes } from "sequelize";
 import { sequelize } from './index.js'
 import { Roles } from "../enums/roles.enum.js";
 
+
 export const User = sequelize.define('user', {
     lastname: DataTypes.STRING,
     firstname: DataTypes.STRING,

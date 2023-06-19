@@ -1,5 +1,5 @@
 import yup from 'yup';
-import { RentalType } from '../enums/rental-types.enum';
+import { RentalType } from "../enums/rental-types.enum.js";
 
 export const createRentalSchema = yup.object({
     name: yup.string().max(255),
